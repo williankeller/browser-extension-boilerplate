@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "Chrome Extension Boilerplate",
+    "description": "Extension name"
+  },
+  "extDesc": {
+    "message": "A template for building extensions for Chrome.",
+    "description": "Extension description"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "Modelo para Extensão do Chrome",
+    "description": "Nome da extensão"
+  },
+  "extDesc": {
+    "message": "Um modelo para criar extensões para o Chrome.",
+    "description": "Descrição da extensão"
+  }
+}
