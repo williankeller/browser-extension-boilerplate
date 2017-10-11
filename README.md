@@ -26,3 +26,9 @@ This template allow you start your Chrome extension fast and also work with a or
 
 #### Handler:
 * Your script that will handle the page or tab should be inserted inside the `main.js` file.
+
+#### Installing
+1. Visit `chrome://extensions/` in Chrome;
+2. Enable the **Developer mode**;
+3. Click on **Load unpacked extension**;
+4. Select the folder `chrome-extension-boilerplate` or the folder name you changed.
