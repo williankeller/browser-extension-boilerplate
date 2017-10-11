@@ -4,7 +4,7 @@
   "name": "__MSG_extName__",
   "description": "__MSG_extDesc__",
   "version": "1.0",
-  "default_locale": "pt",
+  "default_locale": "en",
 
   "content_scripts": [
     {
@@ -28,7 +28,7 @@
 
   "browser_action": {
     "default_icon": "src/icons/icon.png",
-    "default_title": "Chrome Extension Boilerplate",
+    "default_title": "__MSG_extName__",
     "default_popup": "src/popup.html"
   },
 
