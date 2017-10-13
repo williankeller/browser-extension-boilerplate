@@ -24,7 +24,7 @@ var Storage = {
    * @param {Function} status
    */
   save: function (keys, status) {
-    this.syncronize.set(keys, status || null);
+    this.syncronize().set(keys, status || null);
   },
 
   /**
@@ -39,7 +39,7 @@ var Storage = {
    * @returns {callback}
    */
   get: function (keys, callback) {
-    this.syncronize.get(keys, function (items) {
+    this.syncronize().get(keys, function (items) {
       callback(items);
     });
   },
@@ -52,7 +52,7 @@ var Storage = {
    * @returns {callback}
    */
   remove: function (keys, callback) {
-    this.syncronize.remove(keys, function (items) {
+    this.syncronize().remove(keys, function (items) {
       callback(items);
     });
   }
