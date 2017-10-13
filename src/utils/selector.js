@@ -30,9 +30,12 @@ var Selector = {
    * @param {string} selector
    * @param {Boolean} prevent
    * @param {Function} callback
-   * @returns {callback}
+   * @returns {Boolean|callback}
    */
   click: function (selector, prevent, callback) {
+    if (! this.element(selector)) {
+      return false;
+    }
     // Capture click action.
     this.element(selector).addEventListener('click', function (event) {
       // Check if prevent click is enabled.
@@ -50,7 +53,7 @@ var Selector = {
    * @param {Object} selector
    * @param {string} element
    */
-  find: function (selector, element) {
+  addClass: function (selector, element) {
     this.element(selector).classList.add(element);
   },
 
@@ -60,7 +63,7 @@ var Selector = {
    * @param {string} selector
    * @param {string} element
    */
-  remove: function (selector, element) {
+  removeClass: function (selector, element) {
     this.element(selector).classList.remove(element);
   },
 
