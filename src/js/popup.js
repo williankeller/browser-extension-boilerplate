@@ -5,6 +5,7 @@
    * Open options dropown list.
    */
   Selector.click('.open-options', null, function () {
+    // Toggle options list with 'show' class.
     Selector.toggle('.menu-options', 'show');
   });
 
