@@ -5,7 +5,27 @@
     <link rel="stylesheet" href="css/options.css">
   </head>
   <body>
-    <div class="container"></div>
-    <script src="utils/options.js"></script>
+    <div class="container">
+      <div class="field">
+        <label>Default input</label>
+        <input type="text" class="text" id="default-input">
+      </div>
+      <div class="field">
+        <label>
+          <input type="checkbox" id="default-checkbox"><span>Default Checkbox</span>
+        </label>
+      </div>
+      <div class="field">
+        <div class="half">
+          <div class="response"></div>
+        </div>
+        <div class="half">
+          <button class="save-options">Save options</button>
+        </div>
+      </div>
+    </div>
+    <script src="utils/selector.js"></script>
+    <script src="utils/storage.js"></script>
+    <script src="js/options.js"></script>
   </body>
 </html>
