@@ -1,6 +1,10 @@
-/*
+/*!
+ * Chrome Extension Boilerplate 1.0 (https://github.com/williankeller/chrome-extension-boilerplate)
+ * Copyright 2017 "Chrome Extension Boilerplate" Authors (https://github.com/williankeller/chrome-extension-boilerplate/graphs/contributors)
+ * Licensed under MIT (https://github.com/williankeller/chrome-extension-boilerplate/blob/master/LICENSE)
+ */
+/**
  * Define Chrome storage settings.
- *
  * @type Function
  */
 var Storage = {
