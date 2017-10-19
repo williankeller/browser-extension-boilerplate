@@ -1,8 +1,10 @@
 /*!
- * Chrome Extension Boilerplate 1.0 (https://github.com/williankeller/chrome-extension-boilerplate)
- * Copyright 2017 "Chrome Extension Boilerplate" Authors (https://github.com/williankeller/chrome-extension-boilerplate/graphs/contributors)
- * Licensed under MIT (https://github.com/williankeller/chrome-extension-boilerplate/blob/master/LICENSE)
+ * Chrome Extension Boilerplate - Storage 1.0
+ * https://github.com/williankeller/chrome-extension-boilerplate/blob/master/src/utils/storage.js
+ * Copyright 2017 "Chrome Extension Boilerplate"
+ * Licensed under MIT
  */
+
 /**
  * Define Chrome storage settings.
  * @type Function
@@ -38,7 +40,7 @@ var Storage = {
    * An empty list or object will return an empty result object. 
    * Pass in null to get the entire contents of storage.
    *
-   * @param {Object} defaults
+   * @param {Object} keys
    * @param {Function} callback
    * @returns {callback}
    */

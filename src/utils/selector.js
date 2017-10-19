@@ -1,8 +1,10 @@
 /*!
- * Chrome Extension Boilerplate 1.0 (https://github.com/williankeller/chrome-extension-boilerplate)
- * Copyright 2017 "Chrome Extension Boilerplate" Authors (https://github.com/williankeller/chrome-extension-boilerplate/graphs/contributors)
- * Licensed under MIT (https://github.com/williankeller/chrome-extension-boilerplate/blob/master/LICENSE)
+ * Chrome Extension Boilerplate - Selector 1.0
+ * https://github.com/williankeller/chrome-extension-boilerplate/blob/master/src/utils/selector.js
+ * Copyright 2017 "Chrome Extension Boilerplate"
+ * Licensed under MIT
  */
+
 /**
  * Define Selector functions.
  * @type Function
@@ -13,7 +15,7 @@ var Selector = {
    * Get current provided selector.
    *
    * @param {string} selector
-   * @param {string} type [null|querySelector|querySelectorAll]
+   * @param {string} Mixed [null|querySelector|querySelectorAll]
    * @returns {NodeList|Element}
    */
   element: function (selector, type) {
@@ -37,17 +39,18 @@ var Selector = {
    * @returns {Boolean|callback}
    */
   click: function (selector, prevent, callback) {
-    if (! this.element(selector)) {
+    var element = this.element(selector);
+    if (! element) {
       return false;
     }
     // Capture click action.
-    this.element(selector).addEventListener('click', function (event) {
+    element.addEventListener('click', function (event) {
       // Check if prevent click is enabled.
       if (prevent || null) {
         event.preventDefault();
       }
       // Callback response.
-      callback(event);
+      callback(element, event);
     });
   },
 
@@ -55,20 +58,20 @@ var Selector = {
    * Add new class element to a selector.
    *
    * @param {Object} selector
-   * @param {string} element
+   * @param {string} style
    */
-  addClass: function (selector, element) {
-    this.element(selector).classList.add(element);
+  addClass: function (selector, style) {
+    this.element(selector).classList.add(style);
   },
 
   /**
    * Remove class element from a selector.
    *
    * @param {string} selector
-   * @param {string} element
+   * @param {string} style
    */
-  removeClass: function (selector, element) {
-    this.element(selector).classList.remove(element);
+  removeClass: function (selector, style) {
+    this.element(selector).classList.remove(style);
   },
 
   /**
