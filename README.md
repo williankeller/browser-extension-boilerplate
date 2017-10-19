@@ -1,6 +1,7 @@
 ## Chrome Extension Boilerplate [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](http://opensource.org/licenses/MIT)
 
 A boilerplate template for building extensions for Chrome.
+The idea here is make easier to start a great Chrome extension.
 This template allow you start your Chrome extension fast and also work with a organized code structure.
 
 
