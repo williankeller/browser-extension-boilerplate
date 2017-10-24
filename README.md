@@ -1,4 +1,4 @@
-## Chrome Extension Boilerplate [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](http://opensource.org/licenses/MIT)
+## Cross-browser Extension Boilerplate [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](http://opensource.org/licenses/MIT)
 
 A boilerplate template for building cross-browser extensions for Chrome and Firefox.
 The idea here is make easier to start a great extension for Chrome and Firefox.
