@@ -1,0 +1,27 @@
+{
+  "name": "browser-extension-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate template for building cross browser extensions (Chrome and Firefox).",
+  "license": "MIT",
+  "devDependencies": {
+    "jshint": "^2.9.5"
+  },
+  "scripts": {
+    "test": "./node_modules/jshint/bin/jshint src/main.js",
+    "test": "./node_modules/jshint/bin/jshint src/utils/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/williankeller/browser-extension-boilerplate"
+  },
+  "keywords": [
+    "extension",
+    "extension-boilerplate",
+    "chrome-extension",
+    "firefox-addon"
+  ],
+  "bugs": {
+    "url": "https://github.com/williankeller/browser-extension-boilerplate/issues"
+  },
+  "homepage": "https://github.com/williankeller/browser-extension-boilerplate"
+}
