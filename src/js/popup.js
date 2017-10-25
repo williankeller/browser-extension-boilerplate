@@ -1,4 +1,4 @@
-(function (chrome, window, Selector) {
+(function (chrome, window, Runtime, Selector) {
   'use strict';
 
   /**
@@ -13,9 +13,9 @@
    * Open the settings page.
    */
   Selector.click('.open-settings', null, function () {
-    if (chrome.runtime.openOptionsPage) {
+    if (Runtime.api('runtime').openOptionsPage) {
       // New way to open options pages, if supported (Chrome 42+).
-      chrome.runtime.openOptionsPage();
+      Runtime.api('runtime').openOptionsPage();
     }
     else {
       // Reasonable fallback.
@@ -23,4 +23,4 @@
     }
   });
 
-})(chrome, window, Selector);
+})(chrome, window, Runtime, Selector);

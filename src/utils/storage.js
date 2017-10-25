@@ -1,5 +1,5 @@
 /*!
- * Chrome Extension Boilerplate - Storage 1.0
+ * Chrome Extension Boilerplate - Storage 1.1
  * https://github.com/williankeller/chrome-extension-boilerplate/blob/master/src/utils/storage.js
  * Copyright 2017 "Chrome Extension Boilerplate"
  * Licensed under MIT
@@ -14,11 +14,38 @@ var Storage = {
   /**
    * Make sure we are initializing the storage.
    *
-   * @returns {chrome.storage.local|chrome.storage.sync}
+   * @returns {storage.local|storage.sync}
    */
   syncronize: function () {
-    chrome = chrome || {};
-    return (chrome.storage.sync ? chrome.storage.sync : chrome.storage.local);
+    var section = {};
+    // Try to request as Chrome.
+    try {
+      if (chrome.storage) {
+        section = chrome.storage;
+      }
+    }
+    catch (e) {}
+    // Try to request as Window.
+    try {
+      if (window.storage) {
+        section = window.storage;
+      }
+    }
+    catch (e) {}
+    // Try to request as Browser.
+    try {
+      if (browser.storage) {
+        section = browser.storage;
+      }
+    }
+    catch (e) {}
+    // Try to request as extension in browser.
+    try {
+      section = browser.extension.storage;
+    }
+    catch (e) {}
+
+    return (section.sync ? section.sync : section.local);
   },
 
   /**
