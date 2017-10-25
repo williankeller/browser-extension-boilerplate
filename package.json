@@ -7,8 +7,7 @@
     "jshint": "^2.9.5"
   },
   "scripts": {
-    "test": "./node_modules/jshint/bin/jshint src/main.js",
-    "test": "./node_modules/jshint/bin/jshint src/utils/*"
+    "test": "./node_modules/jshint/bin/jshint src/main.js src/js/* src/utils/runtime.js src/utils/storage.js src/utils/selector.js"
   },
   "repository": {
     "type": "git",
