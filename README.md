@@ -1,4 +1,10 @@
-## Cross-browser Extension Boilerplate [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](http://opensource.org/licenses/MIT)
+## Cross-browser Extension Boilerplate [![Travis status][travis-card]][travis-link] [![Licence][licence-card]][licence-link]
+
+[travis-card]: https://travis-ci.org/williankeller/browser-extension-boilerplate.svg?branch=master 
+[travis-link]: https://travis-ci.org/williankeller/browser-extension-boilerplate "Trevis status"
+
+[licence-card]: https://img.shields.io/badge/License-MIT-blue.svg
+[licence-link]: http://opensource.org/licenses/MIT "MIT License"
 
 A boilerplate template for building cross-browser extensions for Chrome and Firefox.
 The idea here is make easier to start a great extension for Chrome and Firefox.
