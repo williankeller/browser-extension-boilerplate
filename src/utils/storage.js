@@ -1,9 +1,11 @@
 /*!
- * Chrome Extension Boilerplate - Storage 1.1
- * https://github.com/williankeller/chrome-extension-boilerplate/blob/master/src/utils/storage.js
+ * Chrome Extension Boilerplate - Storage 1.2
+ * https://github.com/williankeller/chrome-extension-boilerplate/blob/master/src/utils/storage.min.js
  * Copyright 2017 "Chrome Extension Boilerplate"
  * Licensed under MIT
  */
+
+/* global chrome, browser */
 
 /**
  * Define Chrome storage settings.
@@ -14,38 +16,41 @@ var Storage = {
   /**
    * Make sure we are initializing the storage.
    *
-   * @returns {storage.local|storage.sync}
+   * @returns {chrome.storage.local|window.storage.local|Window.storage.local|browser.storage.local|chrome.storage.sync}
    */
-  syncronize: function () {
+  synchronize: function () {
     var section = {};
     // Try to request as Chrome.
     try {
       if (chrome.storage) {
-        section = chrome.storage;
+        // Check if exist sync session.
+        if (chrome.storage.sync) {
+          section = chrome.storage.sync;
+        }
+        // Else, get local value.
+        else {
+          section = chrome.storage.local;
+        }
       }
     }
     catch (e) {}
     // Try to request as Window.
     try {
       if (window.storage) {
-        section = window.storage;
+        section = window.storage.local;
       }
     }
     catch (e) {}
     // Try to request as Browser.
     try {
       if (browser.storage) {
-        section = browser.storage;
+        section = browser.storage.local;
       }
     }
     catch (e) {}
-    // Try to request as extension in browser.
-    try {
-      section = browser.extension.storage;
-    }
-    catch (e) {}
 
-    return (section.sync ? section.sync : section.local);
+    // Return element of session.
+    return section;
   },
 
   /**
@@ -57,7 +62,7 @@ var Storage = {
    * @param {Function} status
    */
   save: function (keys, status) {
-    this.syncronize().set(keys, status || null);
+    this.synchronize().set(keys, status || null);
   },
 
   /**
@@ -72,7 +77,7 @@ var Storage = {
    * @returns {callback}
    */
   get: function (keys, callback) {
-    this.syncronize().get(keys, function (items) {
+    this.synchronize().get(keys, function (items) {
       callback(items);
     });
   },
@@ -85,7 +90,7 @@ var Storage = {
    * @returns {callback}
    */
   remove: function (keys, callback) {
-    this.syncronize().remove(keys, function (items) {
+    this.synchronize().remove(keys, function (items) {
       callback(items);
     });
   }
