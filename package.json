@@ -47,6 +47,10 @@
       "browser",
       "chrome",
       "window"
+    ],
+    "ignore": [
+      "extension/dist/",
+      "node_modules/"
     ]
   }
 }
