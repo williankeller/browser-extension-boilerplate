@@ -1,7 +1,7 @@
 import { selector } from 'utils/Selector.js'
 import { runtime } from 'utils/Runtime.js'
 
-import 'styles/popup.css'
+import 'styles/popup.scss'
 
 class Popup {
   constructor () {
@@ -21,8 +21,6 @@ class Popup {
      * Open the settings page.
      */
     selector('.open-settings').click(() => {
-      console.log('aqui')
-
       if (runtime.api('runtime').openOptionsPage) {
         // New way to open options pages, if supported (Chrome 42+).
         runtime.api('runtime').openOptionsPage()
