@@ -11,47 +11,44 @@
  * Define Chrome storage settings.
  * @type Function
  */
-var Storage = {
-
+export class Storage {
   /**
    * Make sure we are initializing the storage.
    *
    * @returns {chrome.storage.local|window.storage.local|Window.storage.local|browser.storage.local|chrome.storage.sync}
    */
-  synchronize: function () {
-    var section = {};
+  synchronize () {
+    let section = {}
+
     // Try to request as Chrome.
     try {
       if (chrome.storage) {
         // Check if exist sync session.
         if (chrome.storage.sync) {
-          section = chrome.storage.sync;
-        }
-        // Else, get local value.
-        else {
-          section = chrome.storage.local;
+          section = chrome.storage.sync
+        } else { // Else, get local value.
+          section = chrome.storage.local
         }
       }
-    }
-    catch (e) {}
+    } catch (e) {}
+
     // Try to request as Window.
     try {
       if (window.storage) {
-        section = window.storage.local;
+        section = window.storage.local
       }
-    }
-    catch (e) {}
+    } catch (e) {}
+
     // Try to request as Browser.
     try {
       if (browser.storage) {
-        section = browser.storage.local;
+        section = browser.storage.local
       }
-    }
-    catch (e) {}
+    } catch (e) {}
 
     // Return element of session.
-    return section;
-  },
+    return section
+  }
 
   /**
    * Save values under Chrome Storage.
@@ -59,39 +56,47 @@ var Storage = {
    * Any other key/value pairs in storage will not be affected.
    *
    * @param {Object} keys
-   * @param {Function} status
+   * @return {Primise}
    */
-  save: function (keys, status) {
-    this.synchronize().set(keys, status || null);
-  },
+  save (keys) {
+    return new Promise(resolve => {
+      this.synchronize().set(keys, () => {
+        resolve(true)
+      })
+    })
+  }
 
   /**
    * Gets one or more items from storage.
-   * A single key to get, list of keys to get, or a dictionary specifying 
+   * A single key to get, list of keys to get, or a dictionary specifying
    * default values (see description of the object).
-   * An empty list or object will return an empty result object. 
+   * An empty list or object will return an empty result object.
    * Pass in null to get the entire contents of storage.
    *
    * @param {Object} keys
-   * @param {Function} callback
-   * @returns {callback}
+   * @return {Primise}
    */
-  get: function (keys, callback) {
-    this.synchronize().get(keys, function (items) {
-      callback(items);
-    });
-  },
+  get (keys) {
+    return new Promise(resolve => {
+      this.synchronize().get(keys, items => {
+        resolve(items)
+      })
+    })
+  }
 
   /**
    * Removes one or more items from storage.
    *
    * @param {Object} keys
-   * @param {Function} callback
-   * @returns {callback}
+   * @return {Primise}
    */
-  remove: function (keys, callback) {
-    this.synchronize().remove(keys, function (items) {
-      callback(items);
-    });
+  remove (keys) {
+    return new Promise(resolve => {
+      this.synchronize().remove(keys, items => {
+        resolve(items)
+      })
+    })
   }
-};
+}
+
+export const storage = new Storage()

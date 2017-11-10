@@ -10,26 +10,25 @@
     {
       "matches": ["https://example.com/*"],
       "js": [
-        "src/vendor/jquery.min.js",
-        "src/main.js"
+        "dist/main.js"
       ],
       "run_at": "document_end"
     }
   ],
 
   "options_ui": {
-    "page": "src/options.html",
+    "page": "dist/options.html",
     "chrome_style": true
   },
 
   "icons": {
-    "128": "src/icons/icon.png"
+    "128": "icons/icon.png"
   },
 
   "browser_action": {
-    "default_icon": "src/icons/icon.png",
+    "default_icon": "icons/icon.png",
     "default_title": "__MSG_extName__",
-    "default_popup": "src/popup.html"
+    "default_popup": "dist/popup.html"
   },
 
   "permissions": [
@@ -37,5 +36,7 @@
     "storage",
     "http://*/*",
     "https://*/*"
-  ]
+  ],
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
 }
