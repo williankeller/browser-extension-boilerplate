@@ -1,4 +1,4 @@
-## Cross-browser Extension Boilerplate [![Travis status][travis-card]][travis-link] [![Licence][licence-card]][licence-link]
+## Cross-browser Extension Boilerplate [![Travis status][travis-card]][travis-link] [![Licence][licence-card]][licence-link] [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 [travis-card]: https://travis-ci.org/williankeller/browser-extension-boilerplate.svg?branch=master 
 [travis-link]: https://travis-ci.org/williankeller/browser-extension-boilerplate "Trevis status"
@@ -17,6 +17,23 @@ This template allow you start your cross-brwser extension fast and also work wit
 ```javascript
 "matches": ["https://any-url.com/*"],
 ```
+* Install [Yarn](https://yarnpkg.com) in scope global. 
+  * `$ npm install -g yarn`
+* Install dependencies.
+  * `$ cd browser-extension-boilerplate/ && yarn`
+* Start project - Watch files in project and rebuild if any file changed.
+  * `yarn start`
+* Build for production
+  * `yarn build`
+
+#### Installing (Chrome)
+1. Visit `chrome://extensions/` in Chrome;
+2. Enable the **Developer mode**;
+3. Click on **Load unpacked extension**;
+4. Select the folder `browser-extension-boilerplate/extension` or the folder name you changed.
+
+#### Handler:
+* Your script that will handle the page or tab should be inserted inside the `src/app/main.js` file.
 
 #### Locales:
 * You are able to translate your extension, just go to the `_locales` folder and create the respective language folder.
@@ -30,12 +47,3 @@ This template allow you start your cross-brwser extension fast and also work wit
   }
 }
 ```
-
-#### Handler:
-* Your script that will handle the page or tab should be inserted inside the `main.js` file.
-
-#### Installing (Chrome)
-1. Visit `chrome://extensions/` in Chrome;
-2. Enable the **Developer mode**;
-3. Click on **Load unpacked extension**;
-4. Select the folder `browser-extension-boilerplate` or the folder name you changed.
