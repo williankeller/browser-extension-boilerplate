@@ -4,10 +4,29 @@
   "description": "A boilerplate template for building cross browser extensions (Chrome and Firefox).",
   "license": "MIT",
   "devDependencies": {
-    "jshint": "^2.9.5"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "compression-webpack-plugin": "^1.0.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.6.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "standard": "^10.0.3",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.8.1"
   },
   "scripts": {
-    "test": "./node_modules/jshint/bin/jshint src/main.js src/js/* src/utils/runtime.js src/utils/storage.js src/utils/selector.js"
+    "prebuild": "./node_modules/rimraf/bin.js ./extension/dist/",
+    "start": "node_modules/.bin/webpack --config webpack.config.js -w -d",
+    "build": "node_modules/.bin/webpack --config webpack.production.config.js -p",
+    "test": "node_modules/.bin/standard"
   },
   "repository": {
     "type": "git",
@@ -22,5 +41,16 @@
   "bugs": {
     "url": "https://github.com/williankeller/browser-extension-boilerplate/issues"
   },
-  "homepage": "https://github.com/williankeller/browser-extension-boilerplate"
+  "homepage": "https://github.com/williankeller/browser-extension-boilerplate",
+  "standard": {
+    "globals": [
+      "browser",
+      "chrome",
+      "window"
+    ],
+    "ignore": [
+      "extension/dist/",
+      "node_modules/"
+    ]
+  }
 }

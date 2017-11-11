@@ -5,40 +5,43 @@
  * Licensed under MIT
  */
 
-/**
+ /**
  * Define browser runtime API settings.
- * @type Function
+ * @type Class
  */
-var Runtime = {
-
+export class Runtime {
   /**
    * Find the right request API to instance as object.
    *
    * @param {String} api
    * @returns {Runtime.api.extension}
    */
-  api: function (api) {
-    // Try to request as Chrome.
+  api (method) {
     try {
-      if (chrome[api]) {
-        return chrome[api];
+      if (chrome[method]) {
+        return chrome[method]
       }
     } catch (e) {}
+
     // Try to request as Window.
     try {
-      if (window[api]) {
-        return window[api];
+      if (window[method]) {
+        return window[method]
       }
     } catch (e) {}
+
     // Try to request as Browser.
     try {
-      if (browser[api]) {
-        return browser[api];
+      if (browser[method]) {
+        return browser[method]
       }
     } catch (e) {}
+
     // Try to request as extension in browser.
     try {
-      return browser.extension[api];
+      return browser.extension[method]
     } catch (e) {}
   }
-};
+}
+
+export const runtime = new Runtime()
