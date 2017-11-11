@@ -8,11 +8,11 @@
 
 A boilerplate template for building cross-browser extensions for Chrome and Firefox.
 The idea here is make easier to start a great extension for Chrome and Firefox.
-This template allow you start your cross-brwser extension fast and also work with a organized code structure.
+This template allow you start your cross-browser extension fast and also work with a organized code structure.
 
 
 #### Starting:
-* Open the `manifestet.json` file and change the `matches` URL to match exactly with the URL you want you script load.
+* Open the `manifest.json` file and change the `matches` URL to match exactly with the URL you want your script load.
 * You can add more than one URL at the same time, or add a Regex rule, like:
 ```javascript
 "matches": ["https://any-url.com/*"],
