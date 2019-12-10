@@ -28,20 +28,21 @@
     "build": "node_modules/.bin/webpack --config webpack.production.config.js -p",
     "test": "node_modules/.bin/standard"
   },
+  "homepage": "https://github.com/williankeller/browser-extension-boilerplate",
   "repository": {
     "type": "git",
     "url": "https://github.com/williankeller/browser-extension-boilerplate"
   },
-  "keywords": [
-    "extension",
-    "extension-boilerplate",
-    "chrome-extension",
-    "firefox-addon"
-  ],
   "bugs": {
     "url": "https://github.com/williankeller/browser-extension-boilerplate/issues"
   },
-  "homepage": "https://github.com/williankeller/browser-extension-boilerplate",
+  "keywords": [
+    "extension",
+    "extension-boilerplate",
+    "browser-extension-boilerplate"
+    "chrome-extension",
+    "firefox-addon"
+  ],
   "standard": {
     "globals": [
       "browser",
@@ -52,5 +53,8 @@
       "extension/dist/",
       "node_modules/"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
